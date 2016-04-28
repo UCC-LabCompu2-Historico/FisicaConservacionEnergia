@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fisica I - Conservacion de Energia</title>
+    <style type="text/css">
+        body {background-image:url("back5.png");}
+
+        #caja1{
+            position: fixed;
+            color: white;
+            border-style: inset;
+            border-width: 2px;
+            border-color: steelblue;
+            width: 195px;
+            top: 10px;
+            left: 110px;
+            font-family: "Times New Roman",serif;        }
+
+        #caja2 {
+            position: relative;
+            color: white;
+            border-style: inset;
+            border-color: steelblue;
+            width: 1000px;
+            height: 500px;
+            top: 60px;
+            left: 200px;
+            font-family: "Times New Roman",serif;        }
+        ul {
+            position: absolute;
+            top: 120px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100px;
+            background-color:steelblue;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            padding: 8px 0 8px 16px;
+            text-decoration: none;
+        }
+
+
+
+        li a:hover:not(.active) {
+            background-color: darkslategrey;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="caja1">
+    Conservacion de la Energia
+</div>
+<div id="caja2">
+    <u>Parametros</u><br>
+    <input type="text" name="nombre">
+    <select name="unidades">
+        <option value="metro">metro</option>
+        <option value="centimetro">centimetro</option>
+        <option value="milimetro">milimetro</option>
+        <option value="kilometro">kilometro</option>
+    </select><br>
+    <input type="password" name="psw">
+    <select name="unidades">
+        <option value="metro">metro</option>
+        <option value="centimetro">centimetro</option>
+        <option value="milimetro">milimetro</option>
+        <option value="kilometro">kilometro</option>
+    </select><br>
+    <input type="email" name="email">
+    <select name="unidades">
+        <option value="metro">metro</option>
+        <option value="centimetro">centimetro</option>
+        <option value="milimetro">milimetro</option>
+        <option value="kilometro">kilometro</option>
+    </select><br>
+
+
+</div>
+
+
+<img src="uccLogo.png" alt="Universidad Catolica de Cordoba" style="position: fixed; top: 10px;width:100px;height:100px;">
+<button type="button" style="position: fixed;bottom: 25px; right: 50px">Siguiente</button>
+<button type="button" style="position: fixed;bottom: 25px; left: 50px">Tutorial</button>
+<button type="button" style="position: fixed;bottom: 50px; left: 50px">Magnitud</button>
+
+<ul>
+
+    <li><a>Tutorial</a></li>
+    <li><a>Magnitud a Calcular</a></li>
+    <li><a>Grafico</a></li>
+    <li><a>Resultados</a></li>
+</ul>
+
+</body>
+</html>

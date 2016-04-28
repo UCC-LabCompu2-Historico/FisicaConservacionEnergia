@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <style type="text/css">
-        body {background-image:url("back1.png");}
+        body {background-image:url("back5.png");}
 
         #caja1{
             position: fixed;
             color: white;
-            border-style: inset;
+            border-style:inset;
+            border-width: 2px;
             border-color: steelblue;
             width: 195px;
             top: 10px;
             left: 110px;
-            font-family: Georgia;
+            font-family: "Times New Roman",serif;
+
         }
 
         #caja2 {
@@ -24,7 +26,33 @@
             height: 500px;
             top: 60px;
             left: 200px;
-            font-family: Georgia;
+            font-family: "Times New Roman",serif;
+            font-size: 20px;
+        }
+
+        ul{
+            position: absolute;
+            top: 120px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100px;
+            background-color:steelblue;
+        }
+
+        li a {
+
+            display: block;
+            color: white;
+            padding: 8px 0 8px 16px;
+            text-decoration: none;
+        }
+
+
+
+        li a:hover:not(.active) {
+            background-color: darkslategrey;
+            color: white;
         }
 
 
@@ -38,18 +66,32 @@
     </div>
     <div id="caja2">
         <pre>
-            Tutorial
-                A traves de esta pagina vas a poder resolver un ejercicio particular de conservacion de la energia (figura).
-
-
+        Tutorial
+            A traves de esta pagina vas a poder resolver un ejercicio particular de
+        conservacion de la energia (figura).
+            Se puede calcular sobre los puntos B y C: las energias potenciales, las
+        velocidades y el tiempo trascurrido. Ademas, la variacion de distancia 'x'
+        del resorte.
+            En la proxima pagina vas a poder elegir cual de las magnitudes anteriores
+        calcular, y para eso vas a necesitar cierta informacion de datos, como la masa,
+        el coeficiente de rozamiento (entre B y C), la constante elastica (k) del
+        resorte, etc. Esos datos los ingresaras dependiendo la magnitud a calcular en
+        la siguiente pagina, la de parametros. Luego podras calcular los datos y
+        observar una animacion del problema.
+            Al final, opcionalmente podes comparar los datos ingresasdos con nuevos
+        datos a ingresar.
 
         </pre>
-        <img src="ej2.jpg" alt="Figura 1" style="position: relative; top: 230px;left: 25%;width:50%;height:30%;">
+        <img src="ej2.jpg" alt="Figura 1" style="position: absolute; top: 345px;left: 25%;width:50%;height:30%;">
     </div>
 
 
     <img src="uccLogo.png" alt="Universidad Catolica de Cordoba" style="position: fixed; top: 10px;width:100px;height:100px;">
-    <button type="button" style="position: fixed;bottom: 25px; right: 50px">Siguiente</button>
+    <ul>
+
+        <li><a>Magnitudes a Calcular</a></li>
+
+    </ul>
 
 </body>
 </html>
