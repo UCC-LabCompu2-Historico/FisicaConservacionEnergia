@@ -1,0 +1,191 @@
+body {
+    background-image: url('pics/back5.png');
+
+}
+
+#titulo{
+
+    position: relative;
+    top:200px;
+    color: white;
+    text-align: center;
+    font-family: "Times New Roman",serif;
+    font-variant: small-caps;
+}
+
+#caja1{
+    position: fixed;
+    color: white;
+    border-style:inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 195px;
+    top: 10px;
+    left: 110px;
+    text-align: center;
+    font-family: "Times New Roman",serif;
+
+}
+
+#caja2 {
+    position: relative;
+    color: white;
+    border-style: inset;
+    border-color: steelblue;
+    width: 1000px;
+    height: 500px;
+    top: 60px;
+    left: 200px;
+    font-family: "Times New Roman",serif;
+    font-size: 20px;
+}
+
+#caja3{
+    position: fixed;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 195px;
+    top: 10px;
+    left: 110px;
+    text-align: center;
+    font-family: "Times New Roman",serif;        }
+
+#caja4 {
+    position: relative;
+    color: white;
+    border-style: inset;
+    border-color: steelblue;
+    width: 1000px;
+    height: 250px;
+    top: 150px;
+    left: 180px;
+    font-family: "Times New Roman",serif;
+    text-align: center;
+}
+#caja5{
+    position: fixed;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 195px;
+    top: 10px;
+    left: 110px;
+    text-align: center;
+    font-family: "Times New Roman",serif;        }
+
+#caja6 {
+    position: fixed;
+    color: white;
+    border-style: inset;
+    border-color: steelblue;
+    width: 1000px;
+    height: 300px;
+    top: 60px;
+    left: 200px;
+    text-align: center;
+    font-family: "Times New Roman",serif;        }
+
+
+
+#caja7{
+    position: fixed;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 195px;
+    top: 10px;
+    left: 110px;
+    text-align: center;
+    font-family: "Times New Roman",serif;        }
+
+#caja8 {
+    position: relative;
+    color: white;
+    border-style: inset;
+    border-color: steelblue;
+    width: 1000px;
+    height: 400px;
+    top: 150px;
+    left: 180px;
+    font-family: "Times New Roman",serif;
+    text-align: center;
+    font-size: 35px;
+}
+#caja9{
+    position: fixed;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 195px;
+    top: 10px;
+    left: 110px;
+    text-align: center;
+    font-family: "Times New Roman",serif;        }
+
+#caja10 {
+    position: relative;
+    color: white;
+    border-style: inset;
+    border-color: steelblue;
+    width: 250px;
+    height:165px;
+    top:   100px;
+    left: 40%;
+    font-family: "Times New Roman",serif;
+    text-align: center;
+    font-size: 35px;
+}
+
+#cajaResultados {
+
+    position: relative;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 195px;
+    height: 35px;
+    top: 30px;
+    left: 28px;
+    text-align: center;
+    font-family: "Times New Roman",serif;
+    font-size: 15px;
+}
+
+#parametros {
+    position:relative;
+    top: 0px;
+    left: 10px;
+    height:15px;
+    text-align: left;
+}
+
+ul{
+    position: absolute;
+    top: 120px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color:steelblue;
+}
+
+li a {
+
+    display: block;
+    color: white;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+
+
+li a:hover:not(.active) {
+    background-color: darkslategrey;
+    color: white;
+}
