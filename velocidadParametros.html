@@ -15,17 +15,19 @@
             width: 195px;
             top: 10px;
             left: 110px;
+            text-align: center;
             font-family: "Times New Roman",serif;        }
 
         #caja2 {
-            position: relative;
+            position: fixed;
             color: white;
             border-style: inset;
             border-color: steelblue;
             width: 1000px;
-            height: 500px;
+            height: 300px;
             top: 60px;
             left: 200px;
+            text-align: center;
             font-family: "Times New Roman",serif;        }
         ul {
             position: absolute;
@@ -50,6 +52,16 @@
             background-color: darkslategrey;
             color: white;
         }
+        #parametros {
+            position:relative;
+            top: 0px;
+            left: 10px;
+            height:15px;
+           text-align: left;
+        }
+
+
+
 
     </style>
 </head>
@@ -59,40 +71,51 @@
     Conservacion de la Energia
 </div>
 <div id="caja2">
-    <u>Parametros</u><br>
-    <input type="text" name="nombre">
-    <select name="unidades">
-        <option value="metro">metro</option>
-        <option value="centimetro">centimetro</option>
-        <option value="milimetro">milimetro</option>
-        <option value="kilometro">kilometro</option>
-    </select><br>
-    <input type="password" name="psw">
-    <select name="unidades">
-        <option value="metro">metro</option>
-        <option value="centimetro">centimetro</option>
-        <option value="milimetro">milimetro</option>
-        <option value="kilometro">kilometro</option>
-    </select><br>
-    <input type="email" name="email">
-    <select name="unidades">
-        <option value="metro">metro</option>
-        <option value="centimetro">centimetro</option>
-        <option value="milimetro">milimetro</option>
-        <option value="kilometro">kilometro</option>
-    </select><br>
 
+    <div id="parametros">
+        <u>Calculo de Velocidad - Parametros</u><br><br>
+    Masa del objeto<br> <input type="valor" name="masa">
+    <label>
+        <select name="unidades">
+            <option value="miligramo">miligramo</option>
+            <option value="gramo">gramo</option>
+            <option value="kilogramo">kilogramo</option>
 
+        </select>
+    </label><br><br>
+    Altura punto A<br> <input type="altura" name="altura">
+    <label>
+        <select name="unidades">
+            <option value="milimetro">milimetro</option>
+            <option value="centimetro">centimetro</option>
+            <option value="metro">metro</option>
+            <option value="kilometro">kilometro</option>
+        </select>
+    </label><br><br>
+    Distancia B-C<br> <input type="distancia freno" name="distancia freno">
+    <label>
+        <select name="unidades">
+            <option value="milimetro">milimetro</option>
+            <option value="centimetro">centimetro</option>
+            <option value="metro">metro</option>
+            <option value="kilometro">kilometro</option>
+        </select>
+    </label><br><br>
+
+    Coeficiente de Rozamiento entre B-C<br> <input type="coeficiente de rozamiento" name="Coeficiente de Rozamiento">
+    <label>
+        <select name="unidades">
+            <option value="mu">mu</option>
+        </select>
+    </label><br><br>
+  </div>
+    <img src="ej2.jpg" alt="Figura 1" style="position: absolute; top: 50px;left: 35%;width:60%;height:60%;">
 </div>
 
-
 <img src="uccLogo.png" alt="Universidad Catolica de Cordoba" style="position: fixed; top: 10px;width:100px;height:100px;">
-<button type="button" style="position: fixed;bottom: 25px; right: 50px">Siguiente</button>
-<button type="button" style="position: fixed;bottom: 25px; left: 50px">Tutorial</button>
-<button type="button" style="position: fixed;bottom: 50px; left: 50px">Magnitud</button>
+
 
 <ul>
-
     <li><a>Tutorial</a></li>
     <li><a>Magnitud a Calcular</a></li>
     <li><a>Grafico</a></li>
