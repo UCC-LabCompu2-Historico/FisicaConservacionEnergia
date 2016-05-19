@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Fisica I - Conservacion de Energia</title>
     <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script type="text/javascript" src="javaS.js"></script>
+
     <link rel="shortcut icon" href='pics/fisica2.ico' >
 </head>
 <body>
@@ -24,7 +26,8 @@
 
         </select>
     </label><br><br>
-    Altura punto A<br> <input type="altura" name="altura">
+    Altura punto A<br> <input type="text" name="altura" onchange="comprobarAltura(this.value);">
+
     <label>
         <select name="unidades">
             <option value="milimetro">milimetro</option>
@@ -57,10 +60,10 @@
 
 
 <ul>
-    <li><a href="page2.html" target="_blank">Tutorial</a></li>
-    <li><a href="page2.5.html" target="_blank">Magnitud a Calcular</a></li>
-    <li><a href="Grafico.html" target="_blank">Grafico</a></li>
-    <li><a href="Resultados.html" target="_blank">Resultados</a></li>
+    <li><a href="page2.html" target="_self">Tutorial</a></li>
+    <li><a href="page2.5.html" target="_self">Magnitud a Calcular</a></li>
+    <li><a href="Grafico.html" target="_self">Grafico</a></li>
+    <li><a href="Resultados.html" target="_self">Resultados</a></li>
 </ul>
 
 </body>
