@@ -17,7 +17,9 @@ function comprobarNum(valorIngreso) {
     }
 }
  function altura(){
+
      h= x;
+
  }
 
  function distancia(){
@@ -54,6 +56,7 @@ function comprobarNum(valorIngreso) {
      {d = d * 1000;}
  }
     function resultadoVelocidad (uMasa, uLong1, uLong2){
+        alert(uMasa + uLong1 + uLong2);
    if (uMasa != "gramo"){
        convertirMasa(uMasa);
    }
