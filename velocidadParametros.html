@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href='pics/fisica2.ico' >
 </head>
 <body>
-
+<form id="formVelocidad">
 <div id="caja5">
     Conservacion de la Energia
 </div>
@@ -17,7 +17,7 @@
 
     <div id="parametros">
         <u>Calculo de Velocidad - Parametros</u><br><br>
-    Masa del objeto<br> <input type="text" name="masa" onchange="comprobarNum(this.value); masa();">
+    Masa del objeto<br> <input type="text" name="masa" onchange="comprobarNum(this.value);"> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
     <label>
         <select name="unidadesMasa" >
             <option value="miligramo">miligramo</option>
@@ -26,7 +26,7 @@
 
         </select>
     </label><br><br>
-    Altura punto A<br> <input type="text" name="altura" onchange="comprobarNum(this.value); altura();">
+    Altura punto A<br> <input type="text" name="altura" onchange="comprobarNum(this.value); "> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
 
     <label>
         <select name="unidadesAltura">
@@ -36,7 +36,7 @@
             <option value="kilometro">kilometro</option>
         </select>
     </label><br><br>
-    Distancia B-C<br> <input type="text" name="distanciaFreno" onchange="comprobarNum(this.value); distancia();">
+    Distancia B-C<br> <input type="text" name="distanciaFreno" onchange="comprobarNum(this.value);"> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
     <label>
         <select name="unidadesDistancia">
             <option value="milimetro">milimetro</option>
@@ -46,7 +46,7 @@
         </select>
     </label><br><br>
 
-    Coeficiente de Rozamiento entre B-C<br> <input type="text" name="CoeficienteRozamiento" onchange="comprobarNum(this.value); coeficiente();">
+    Coeficiente de Rozamiento entre B-C<br> <input type="text" name="CoeficienteRozamiento" onchange="comprobarNum(this.value); "> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
     <label>
         <select name="unidades">
             <option value="mu">mu</option>
@@ -63,8 +63,8 @@
     <li><a href="page2.html" target="_self">Tutorial</a></li>
     <li><a href="page2.5.html" target="_self">Magnitud a Calcular</a></li>
     <li><a href="Grafico.html" target="_self">Grafico</a></li>
-    <li><a href="Resultados.html" target="_self" onclick="resultadoVelocidad(unidadesMasa.value, unidadesAltura.value, unidadesDistancia.value);">Resultados</a></li>
+    <li><a onclick="resultadoVelocidad()">Resultados</a></li> <!-- SE AGREGA LA LLAMADA DE RESULTADO VELOCIDAD -->
 </ul>
-
+</form>
 </body>
 </html>
