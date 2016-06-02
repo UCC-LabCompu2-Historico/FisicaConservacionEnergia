@@ -183,6 +183,21 @@ body {
     font-family: "Times New Roman",serif;
     font-size: 15px;
 }
+#cajaResultados2 {
+
+    position: relative;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 220px;
+    height: 85px;
+    top: 21px;
+    left: 14px;
+    text-align: center;
+    font-family: "Times New Roman",serif;
+    font-size: 15px;
+}
 
 #parametros {
     position:relative;
