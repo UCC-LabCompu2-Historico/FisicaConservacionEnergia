@@ -148,12 +148,36 @@ body {
     border-style: inset;
     border-color: steelblue;
     width: 1000px;
-    height: 325px;
+    height: 335px;
     top: 60px;
     left: 200px;
     text-align: center;
     font-family: "Times New Roman",serif;        }
 
+#caja12 {
+    position: relative;
+    color: white;
+    border-style: inset;
+    border-color: steelblue;
+    width: 250px;
+    height:200px;
+    top:   100px;
+    left: 40%;
+    font-family: "Times New Roman",serif;
+    text-align: center;
+    font-size: 35px;
+}
+#caja13 {
+    position: fixed;
+    color: white;
+    border-style: inset;
+    border-color: steelblue;
+    width: 1000px;
+    height: 400px;
+    top: 60px;
+    left: 200px;
+    text-align: center;
+    font-family: "Times New Roman",serif;        }
 #cajaResultados {
 
     position: relative;
@@ -163,6 +187,22 @@ body {
     border-color: steelblue;
     width: 195px;
     height: 85px;
+    top: 21px;
+    left: 25px;
+    text-align: center;
+    font-family: "Times New Roman",serif;
+    font-size: 15px;
+}
+
+#cajaResultados2 {
+
+    position: relative;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 195px;
+    height: 125px;
     top: 21px;
     left: 25px;
     text-align: center;
