@@ -32,8 +32,7 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
         var el2 = document.getElementById("formTiempo").elements;
         var url2 = 'ResultadosT.html#'+ 2 + "#" + el2["masa"].value+"#"+el2["unidadesMasa"].value+"#"+el2["altura"].value+"#"+
             el2["unidadesAltura"].value + "#" + el2["distanciaFreno"].value + "#" + el2["unidadesDistancia"].value + "#"+
-            el2["CoeficienteRozamiento"].value + "#" + el2["CoeficienteElasticidad"].value + "#" + el2["Radio"].value + "#"+
-            el2["unidadesRadio"].value;
+            el2["CoeficienteRozamiento"].value;
         window.location.replace(url2);
     }
  
@@ -68,10 +67,7 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
         var uDistancia = (myArr[7]); // Unidades distancia
         var coefRozamiento = (myArr[8]); // Coeficiente de rozamiento
         var coefElasticidad = (myArr[9]); // Coeficiente de elasticidad
-        var radio = (myArr[10]); //  Radio de la Rampa
-        var uRadio = (myArr[11]); // Unidades de Radio
-
-
+      
        if (uMasa != "gramo"){
            masa = convertirUnidades(masa, uMasa);
           }
@@ -81,22 +77,16 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
       if(uDistancia != "metro"){
           distanciaFreno = convertirUnidades(distanciaFreno, uDistancia);
       }
-
-      if (uRadio != "metro"){
-          radio = convertirUnidades(radio, uRadio);
-      }
-
-
+      
         var vB = Math.sqrt((2*g*altura));  //VELOCIDAD EN B
         var vC = Math.sqrt((vB*vB)-(2*coefRozamiento*distanciaFreno*g)); //VELOCIDAD EN C
         var x = Math.sqrt((2*masa*g*(altura-(coefRozamiento*distanciaFreno)))/coefElasticidad); //DISTANCIA ACORTADA DEL RESORTE
         var energiaAB= masa*g*altura;  //ENERGIA EN A Y EN B
         var energiaCR = energiaAB - (coefRozamiento*masa*g*distanciaFreno); //ENERGIA EN C Y EN EL RESORTE
-        var tiempoB = 5;
-        var tiempoC = 8;
-        var tiempoR = 7;
+        var tiempoB = vB/ g;
+        var tiempoC = tiempoB + (vC-vB)/(coefRozamiento*g*(-1));
 
-
+      
 
        
       if(myArr[1] == 1) {
@@ -105,7 +95,6 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
       }else if(myArr[1] == 2){
           document.getElementById("TiempoB").value = tiempoB;
           document.getElementById("TiempoC").value = tiempoC;
-          document.getElementById("TiempoR").value = tiempoR;
       }else if(myArr[1] == 3){
           document.getElementById("EnergiaAB").value = energiaAB;
           document.getElementById("EnergiaCR").value = energiaCR;
