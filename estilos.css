@@ -74,7 +74,8 @@ body {
     top: 10px;
     left: 110px;
     text-align: center;
-    font-family: "Times New Roman",serif;        }
+    font-family: "Times New Roman",serif;
+}
 
 #caja6 {
     position: fixed;
@@ -140,6 +141,18 @@ body {
     text-align: center;
     font-size: 35px;
 }
+
+#caja11 {
+    position: fixed;
+    color: white;
+    border-style: inset;
+    border-color: steelblue;
+    width: 1000px;
+    height: 325px;
+    top: 60px;
+    left: 200px;
+    text-align: center;
+    font-family: "Times New Roman",serif;        }
 
 #cajaResultados {
 

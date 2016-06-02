@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fisica I - Conservacion de Energia</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script type="text/javascript" src="javaS.js"></script>
+
+    <link rel="shortcut icon" href='pics/fisica2.ico' >
+</head>
+<body>
+<form id="formEnergia">
+    <div id="caja5">
+        Conservacion de la Energia
+    </div>
+    <div id="caja6">
+
+        <div id="parametros">
+            <u>Calculo de Energia Potencial - Parametros</u><br><br>
+            Masa del objeto<br> <input type="text" name="masa" onchange="comprobarNum(this.value);"> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
+            <label>
+                <select name="unidadesMasa" >
+                    <option value="miligramo">miligramo</option>
+                    <option value="gramo">gramo</option>
+                    <option value="kilogramo" >kilogramo</option>
+
+                </select>
+            </label><br><br>
+            Altura punto A<br> <input type="text" name="altura" onchange="comprobarNum(this.value); "> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
+
+            <label>
+                <select name="unidadesAltura">
+                    <option value="milimetro">milimetro</option>
+                    <option value="centimetro">centimetro</option>
+                    <option value="metro">metro</option>
+                    <option value="kilometro">kilometro</option>
+                </select>
+            </label><br><br>
+            Distancia B-C<br> <input type="text" name="distanciaFreno" onchange="comprobarNum(this.value);"> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
+            <label>
+                <select name="unidadesDistancia">
+                    <option value="milimetro">milimetro</option>
+                    <option value="centimetro">centimetro</option>
+                    <option value="metro">metro</option>
+                    <option value="kilometro">kilometro</option>
+                </select>
+            </label><br><br>
+
+            Coeficiente de Rozamiento entre B-C<br> <input type="text" name="CoeficienteRozamiento" onchange="comprobarNum(this.value); "> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
+            <label>
+                <select name="unidades">
+                    <option value="mu">mu</option>
+                </select>
+            </label><br><br>
+        </div>
+        <img src='pics/ej2.jpg' alt="Figura 1" style="position: absolute; top: 50px;left: 35%;width:60%;height:60%;">
+    </div>
+
+    <img src='pics/uccLogo.png' alt="Universidad Catolica de Cordoba" style="position: fixed; top: 10px;width:100px;height:100px;">
+
+
+    <ul>
+        <li><a href="page2.html" target="_self">Tutorial</a></li>
+        <li><a href="page2.5.html" target="_self">Magnitud a Calcular</a></li>
+        <li><a href="Grafico.html" target="_self">Grafico</a></li>
+        <li><a onclick="valoresEnergia() ">Resultados</a></li> <!-- SE AGREGA LA LLAMADA DE RESULTADO VELOCIDAD -->
+    </ul>
+</form>
+</body>
+</html>

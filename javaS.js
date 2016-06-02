@@ -2,34 +2,12 @@
  * Created by AlumnoXP on 19/05/16.
  */
 
-/*var x;
-var h;
- var d;         ELIMINADO!!!!
- var mu;
- var m;*/
- var g= 9.8;
  
 function comprobarNum(valorIngreso) {
     if (isNaN(valorIngreso)) {
         alert("Valor ingresado no numerico, ingresar de nuevo.")
     }
 }
- /*function altura(){
-
-     h= x;
-
- }
-
- function distancia(){    ELIMINADO PORQUE YA NO HAY VARIABLES GLOBALES!!!
-     d= x;
- }
- function coeficiente(){
-     mu=x;
- }
- function masa(){
-     m=x;
- }*/
-
  function convertirUnidades (valor, unidad){
      if(unidad == "miligramo" || unidad == "milimetro"){
          valor = valor/1000;
@@ -42,45 +20,55 @@ function comprobarNum(valorIngreso) {
      return valor;
  }
 
-    function resultadoVelocidad (){ /*  ELIMINADOS LOS PARAMETROS Y  CODIGO!!!!
-        alert(uMasa + uLong1 + uLong2);
-   if (uMasa != "gramo"){
-       convertirMasa(uMasa);
-   }
-    if (uLong1 != "metro"){     ELIMINADO!!!!
-        convertirAltura(uLong1);
-    }
-    if (uLong2 != "metro"){
-        convertirDistancia(uLong2);
-
-    var vB= sqrt(2*Number(h)*Number(g)) 99;
-    var vC = 8;
-    document.getElementById("VelocidadB").value = vB;
-    document.getElementById("VelocidadC").value = vC;
-    }
-     */
-     var el=document.getElementById("formVelocidad").elements;
-     var url = 'Resultados.html#'+el["masa"].value+"#"+el["unidadesMasa"].value+"#"+el["altura"].value+"#"+
-               el["unidadesAltura"].value + "#" + el["distanciaFreno"].value + "#" + el["unidadesDistancia"].value + "#"+
-               el["CoeficienteRozamiento"].value;
-     window.location.replace(url);
+    function valoresVelocidad (){
+         var el=document.getElementById("formVelocidad").elements;
+         var url = 'ResultadosV.html#'+ 1 + "#" + el["masa"].value+"#"+el["unidadesMasa"].value+"#"+el["altura"].value+"#"+
+                   el["unidadesAltura"].value + "#" + el["distanciaFreno"].value + "#" + el["unidadesDistancia"].value + "#"+
+                   el["CoeficienteRozamiento"].value;
+         window.location.replace(url);
 
      }
+    function valoresTiempo (){
+
+    }
+ 
+    function valoresEnergia (){
+         var el=document.getElementById("formEnergia").elements;
+         var url = 'ResultadosE.html#'+ 3 + "#" + el["masa"].value+"#"+el["unidadesMasa"].value+"#"+el["altura"].value+"#"+
+             el["unidadesAltura"].value + "#" + el["distanciaFreno"].value + "#" + el["unidadesDistancia"].value + "#"+
+             el["CoeficienteRozamiento"].value;
+         window.location.replace(url);
+
+    }
+
+    function valoresResorte(){
+        var el2 = document.getElementById("formResorte").elements;
+        var url2 = 'ResultadosR.html#'+ 4 + "#" + el2["masa"].value+"#"+el2["unidadesMasa"].value+"#"+el2["altura"].value+"#"+
+            el2["unidadesAltura"].value + "#" + el2["distanciaFreno"].value + "#" + el2["unidadesDistancia"].value + "#"+
+            el2["CoeficienteRozamiento"].value + "#" + el2["CoeficienteElasticidad"].value;
+        window.location.replace(url2);
+
+    }
+ 
   function cargarResultado() {   // AGREGADO!!!!
+
+        var g= 9.8;
+      
         var myArr = window.location.hash.split('#');
-        //var masa=(myArr[1]); //masa
-        //var uMasa=(myArr[2]); //unidadesMasa
-        var altura=(myArr[3]); //altura
-        var uAltura= (myArr[4]); // unidadesAltura
-        var distanciaFreno = (myArr[5]); //Distancia
-        var uDistancia = (myArr[6]); // Unidades distancia
-        var coefRozamiento = (myArr[7]); // Coeficiente de rozamiento
+        var masa=(myArr[2]); //masa
+        var uMasa=(myArr[3]); //unidadesMasa
+        var altura=(myArr[4]); //altura
+        var uAltura= (myArr[5]); // unidadesAltura
+        var distanciaFreno = (myArr[6]); //Distancia
+        var uDistancia = (myArr[7]); // Unidades distancia
+        var coefRozamiento = (myArr[8]); // Coeficiente de rozamiento
+        var coefElasticidad = (myArr[9]); // Coeficiente de elasticidad
 
 
 
-       /*if (uMasa != "gramo"){
+       if (uMasa != "gramo"){
            masa = convertirUnidades(masa, uMasa);
-          }*/
+          }
       if(uAltura != "metro"){
           altura = convertirUnidades(altura, uAltura);
       }
@@ -91,10 +79,32 @@ function comprobarNum(valorIngreso) {
 
 
         var vB = Math.sqrt((2*g*altura));
-        var vC = Math.sqrt((vB*vB)-(2*coefRozamiento*distanciaFreno));
-      document.getElementById("VelocidadB").value = vB;
-      document.getElementById("VelocidadC").value = vC;
+        var vC = Math.sqrt((vB*vB)-(2*coefRozamiento*distanciaFreno*g));
+        var x = Math.sqrt((2*masa*g*(altura-(coefRozamiento*distanciaFreno)))/coefElasticidad);
+        var energiaAB= masa*g*altura;
+        var energiaCR = energiaAB - (coefRozamiento*masa*g*distanciaFreno);
+
+
+       
+      if(myArr[1] == 1) {
+          document.getElementById("VelocidadB").value = vB;
+          document.getElementById("VelocidadC").value = vC;
+      }else if(myArr[1] ==2){
+            // llamar al Tiempo!
+      }else if(myArr[1] == 3){
+          document.getElementById("EnergiaAB").value = energiaAB;
+          document.getElementById("EnergiaCR").value = energiaCR;
+      }else if(myArr[1] == 4){
+          document.getElementById("xResorte").value = x;
       }
+
+
+
+  }
+
+ 
+
+
 
 
 

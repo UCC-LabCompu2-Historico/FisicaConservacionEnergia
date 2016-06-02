@@ -1,1 +1,1 @@
-# FisicaConservacionEnergia
+# Revisar boton parametros en pagina Resultados.
