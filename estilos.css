@@ -168,6 +168,19 @@ body {
     font-size: 35px;
 }
 
+
+#caja13{
+    position: fixed;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+    border-color: steelblue;
+    width: 195px;
+    top: 5px;
+    left: 7px;
+    text-align: center;
+    font-family: "Times New Roman",serif;        }
+
 #cajaResultados {
 
     position: relative;
