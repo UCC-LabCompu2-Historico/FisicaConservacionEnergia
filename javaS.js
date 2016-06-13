@@ -84,7 +84,7 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
         var energiaAB= masa*g*altura;  //ENERGIA EN A Y EN B
         var energiaCR = energiaAB - (coefRozamiento*masa*g*distanciaFreno); //ENERGIA EN C Y EN EL RESORTE
         var tiempoB = vB/ g;
-        var tiempoC = tiempoB + (vC-vB)/(coefRozamiento*g*(-1));
+        var tiempoC = tiempoB +(vC-vB)/(coefRozamiento*g*(-1));
 
       
 
