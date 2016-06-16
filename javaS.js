@@ -2,6 +2,15 @@
  * Created by AlumnoXP on 19/05/16.
  */
 
+
+
+ /*var vB;
+ var vC;            // ESTAS VARIABLES SON LOS DISTINTOS RESULTADOS POSIBLES
+ var x;             // LOS DECLARO GLOBALES PARA USARLOS EN LAS ANIMACIONES DE GRAFICOS.
+ var energiaAB;
+ var energiaCR
+ var tiempoB;
+ var tiempoC;*/
  
 function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
     if (isNaN(valorIngreso)) {
@@ -28,6 +37,8 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
          window.location.replace(url);
 
      }
+ 
+ 
     function valoresTiempo (){ // CONCATENA LOS VALORES DE TIEMPO
         var el2 = document.getElementById("formTiempo").elements;
         var url2 = 'ResultadosT.html#'+ 2 + "#" + el2["masa"].value+"#"+el2["unidadesMasa"].value+"#"+el2["altura"].value+"#"+
@@ -85,7 +96,8 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
         var energiaCR = energiaAB - (coefRozamiento*masa*g*distanciaFreno); //ENERGIA EN C Y EN EL RESORTE
         var tiempoB = vB/ g;
         var tiempoC = tiempoB +(vC-vB)/(coefRozamiento*g*(-1));
-
+        
+       
       
 
        
@@ -104,9 +116,104 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
 
   }
 
+ function graficar(){
+     
+     var canvas = document.getElementById("grafico");
+     var curva = canvas.getContext("2d"); // BAJADA CURVA
+     var freno = canvas.getContext("2d"); // PARTE CON FRICCION
+     var linea5 = canvas.getContext("2d"); // LINEAS 1, 2, 3, 4, 5 DE ESTRUCTURA
+     var linea2 = canvas.getContext("2d"); 
+     var linea1 = canvas.getContext("2d");
+     var linea3=canvas.getContext("2d");
+     var linea4=canvas.getContext("2d");
+     var objeto = canvas.getContext("2d"); // OBJETO PARA ANIMAR
+     var resorte1 = canvas.getContext("2d");// RESORTE AL FINAL
+     var resorte2 = canvas.getContext("2d");
+     var resorte3 = canvas.getContext("2d");
+     var resorte4 = canvas.getContext("2d");
+     var resorteCab = canvas.getContext("2d");
+
+
+
+     curva.beginPath(); 
+     curva.arc(300, 100, 200, (1/2)*Math.PI, Math.PI);
+     curva.stroke();
+
+     var grd=freno.createLinearGradient(500, 0, 750, 0);
+     grd.addColorStop(0,"red");
+     grd.addColorStop(1,"white");
+     freno.fillStyle=grd;
+     freno.fillRect(300, 300, 400, 3);
+
+     linea5.moveTo(900, 300);
+     linea5.lineTo(900, 250);
+     linea5.stroke();
+
+     linea2.moveTo(100, 100);
+     linea2.lineTo(50, 100);
+     linea2.stroke();
+
+     linea1.moveTo(50, 100);
+     linea1.lineTo(50, 300);
+     linea1.stroke();
+
+     linea3.moveTo(50, 300);
+     linea3.lineTo(300, 300);
+     linea3.stroke();
+
+     linea4.moveTo(700, 300); 
+     linea4.lineTo(900, 300);
+     linea4.stroke();
+
+     resorte1.moveTo(900, 250);
+     resorte1.lineTo(870, 295);
+     resorte1.stroke();
+
+     resorte2.moveTo(870, 295);
+     resorte2.lineTo(840, 250);
+     resorte2.stroke();
+
+     resorte3.moveTo(840, 250);
+     resorte3.lineTo(810, 295);
+     resorte3.stroke();
+
+     resorte4.moveTo(810, 295);
+     resorte4.lineTo(780, 250);
+     resorte4.stroke();
+
+     resorteCab.moveTo(780, 250);
+     resorteCab.lineTo(780, 295);
+     resorteCab.stroke();
+
+     objeto.beginPath();
+     objeto.arc( 130 , 100 , 30, 0, 2 * Math.PI);
+     objeto.stroke();
+
+   /* function animar() {
+        var x=130;
+        var y=100;
+        //var r = 50;
+
+        function move() {               EN PROCESO PARA GENERAR ANIMACION!!!
+
+            objeto.beginPath();
+            objeto.arc( x , y , 30, 0, 2 * Math.PI);
+            objeto.stroke();
+
+
+            y+= 10;
+            x+= 10;
+
+            if( x == 300)
+                clearInterval(id);
+
+        }
+
+        var id = setInterval(move, 50);
+    }
+    animar();*/
+ }
+
  
-
-
-
 
 

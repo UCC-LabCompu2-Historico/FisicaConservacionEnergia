@@ -5,13 +5,17 @@
     <title>Fisica I - Conservacion de Energia</title>
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <link rel="shortcut icon" href='pics/fisica2.ico' >
+    <script type="text/javascript" src="javaS.js"></script>
 </head>
-<body>
+<body onload="graficar()">
 <div id="caja7">
     Conservacion de la Energia
 </div>
 <div id="caja8">
-<div id="container"><div id="animation"></div> </div>
+    <canvas id="grafico" width="1000" height="400"
+            style="border:1px solid #c3c3c3;">
+
+    </canvas>
 </div>
 
 
@@ -26,4 +30,4 @@
 </ul>
     </div>
 </body>
-</html>>
+</html>
