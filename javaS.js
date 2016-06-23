@@ -4,13 +4,15 @@
 
 
 
- /*var vB;
+ var vB;
  var vC;            // ESTAS VARIABLES SON LOS DISTINTOS RESULTADOS POSIBLES
- var x;             // LOS DECLARO GLOBALES PARA USARLOS EN LAS ANIMACIONES DE GRAFICOS.
+ var distanciaR;             // LOS DECLARO GLOBALES PARA USARLOS EN LAS ANIMACIONES DE GRAFICOS.
  var energiaAB;
- var energiaCR
+ var energiaCR;
  var tiempoB;
- var tiempoC;*/
+ var tiempoC;
+ 
+
  
 function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
     if (isNaN(valorIngreso)) {
@@ -89,16 +91,15 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
           distanciaFreno = convertirUnidades(distanciaFreno, uDistancia);
       }
       
-        var vB = Math.sqrt((2*g*altura));  //VELOCIDAD EN B
-        var vC = Math.sqrt((vB*vB)-(2*coefRozamiento*distanciaFreno*g)); //VELOCIDAD EN C
-        var x = Math.sqrt((2*masa*g*(altura-(coefRozamiento*distanciaFreno)))/coefElasticidad); //DISTANCIA ACORTADA DEL RESORTE
-        var energiaAB= masa*g*altura;  //ENERGIA EN A Y EN B
-        var energiaCR = energiaAB - (coefRozamiento*masa*g*distanciaFreno); //ENERGIA EN C Y EN EL RESORTE
-        var tiempoB = vB/ g;
-        var tiempoC = tiempoB +(vC-vB)/(coefRozamiento*g*(-1));
-        
-       
-      
+         vB = Math.sqrt((2*g*altura));  //VELOCIDAD EN B
+            if( ((vB*vB)-(2*coefRozamiento*distanciaFreno*g)) >0 )
+                 vC = Math.sqrt((vB*vB)-(2*coefRozamiento*distanciaFreno*g)); //VELOCIDAD EN C
+            else  vC = 0;
+         distanciaR = Math.sqrt((2*masa*g*(altura-(coefRozamiento*distanciaFreno)))/coefElasticidad); //DISTANCIA ACORTADA DEL RESORTE
+         energiaAB= masa*g*altura;  //ENERGIA EN A Y EN B
+         energiaCR = energiaAB - (coefRozamiento*masa*g*distanciaFreno); //ENERGIA EN C Y EN EL RESORTE
+         tiempoB = vB/ g;
+         tiempoC = tiempoB +(vC-vB)/(coefRozamiento*g*(-1));
 
        
       if(myArr[1] == 1) {
@@ -117,7 +118,6 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
   }
 
  function graficar(){
-     
      var canvas = document.getElementById("grafico");
      var curva = canvas.getContext("2d"); // BAJADA CURVA
      var freno = canvas.getContext("2d"); // PARTE CON FRICCION
@@ -134,86 +134,146 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
      var resorteCab = canvas.getContext("2d");
 
 
+     function animar() {
+         var x=288;
+         var y=272;
+         var r = 170;
+         var ang =0.5*Math.PI + Math.PI;
+         var aux=10;
 
-     curva.beginPath(); 
-     curva.arc(300, 100, 200, (1/2)*Math.PI, Math.PI);
-     curva.stroke();
+         function moveCurva() {              // EN PROCESO PARA GENERAR ANIMACION!!!
 
-     var grd=freno.createLinearGradient(500, 0, 750, 0);
-     grd.addColorStop(0,"red");
-     grd.addColorStop(1,"white");
-     freno.fillStyle=grd;
-     freno.fillRect(300, 300, 400, 3);
+             canvas.width = canvas.width;
+             objeto.beginPath();
+             objeto.arc(r*Math.sin(ang)+302 , r*Math.cos(ang)+102 , 30, 0, 2 * Math.PI);
+             objeto.stroke();
 
-     linea5.moveTo(900, 300);
-     linea5.lineTo(900, 250);
-     linea5.stroke();
+             curva.beginPath();
+             curva.arc(300, 100, 200, (1/2)*Math.PI, Math.PI);
+             curva.stroke();
 
-     linea2.moveTo(100, 100);
-     linea2.lineTo(50, 100);
-     linea2.stroke();
+             var grd=freno.createLinearGradient(500, 0, 750, 0);
+             grd.addColorStop(0,"red");
+             grd.addColorStop(1,"white");
+             freno.fillStyle=grd;
+             freno.fillRect(300, 300, 400, 3);
 
-     linea1.moveTo(50, 100);
-     linea1.lineTo(50, 300);
-     linea1.stroke();
+             linea5.moveTo(900, 300);
+             linea5.lineTo(900, 250);
+             linea5.stroke();
 
-     linea3.moveTo(50, 300);
-     linea3.lineTo(300, 300);
-     linea3.stroke();
+             linea2.moveTo(100, 100);
+             linea2.lineTo(50, 100);
+             linea2.stroke();
 
-     linea4.moveTo(700, 300); 
-     linea4.lineTo(900, 300);
-     linea4.stroke();
+             linea1.moveTo(50, 100);
+             linea1.lineTo(50, 300);
+             linea1.stroke();
 
-     resorte1.moveTo(900, 250);
-     resorte1.lineTo(870, 295);
-     resorte1.stroke();
+             linea3.moveTo(50, 300);
+             linea3.lineTo(300, 300);
+             linea3.stroke();
 
-     resorte2.moveTo(870, 295);
-     resorte2.lineTo(840, 250);
-     resorte2.stroke();
+             linea4.moveTo(700, 300);
+             linea4.lineTo(900, 300);
+             linea4.stroke();
 
-     resorte3.moveTo(840, 250);
-     resorte3.lineTo(810, 295);
-     resorte3.stroke();
+             resorte1.moveTo(900, 250);
+             resorte1.lineTo(870, 295);
+             resorte1.stroke();
 
-     resorte4.moveTo(810, 295);
-     resorte4.lineTo(780, 250);
-     resorte4.stroke();
+             resorte2.moveTo(870, 295);
+             resorte2.lineTo(840, 250);
+             resorte2.stroke();
 
-     resorteCab.moveTo(780, 250);
-     resorteCab.lineTo(780, 295);
-     resorteCab.stroke();
+             resorte3.moveTo(840, 250);
+             resorte3.lineTo(810, 295);
+             resorte3.stroke();
 
-     objeto.beginPath();
-     objeto.arc( 130 , 100 , 30, 0, 2 * Math.PI);
-     objeto.stroke();
+             resorte4.moveTo(810, 295);
+             resorte4.lineTo(780, 250);
+             resorte4.stroke();
 
-   /* function animar() {
-        var x=130;
-        var y=100;
-        //var r = 50;
+             resorteCab.moveTo(780, 250);
+             resorteCab.lineTo(780, 295);
+             resorteCab.stroke();
+             
+             ang += 0.1 ;
 
-        function move() {               EN PROCESO PARA GENERAR ANIMACION!!!
+             if(ang >= 2*Math.PI){
+                 ang=0;
+                 clearInterval(id);
+                 function moveFreno() {
+                     canvas.width = canvas.width;
+                     objeto.beginPath();
+                     objeto.arc(x, y-2 , 30, 0, 2 * Math.PI);
+                     objeto.stroke();
 
-            objeto.beginPath();
-            objeto.arc( x , y , 30, 0, 2 * Math.PI);
-            objeto.stroke();
+                     curva.beginPath();
+                     curva.arc(300, 100, 200, (1 / 2) * Math.PI, Math.PI);
+                     curva.stroke();
+
+                     var grd = freno.createLinearGradient(500, 0, 750, 0);
+                     grd.addColorStop(0, "red");
+                     grd.addColorStop(1, "white");
+                     freno.fillStyle = grd;
+                     freno.fillRect(300, 300, 400, 3);
+
+                     linea5.moveTo(900, 300);
+                     linea5.lineTo(900, 250);
+                     linea5.stroke();
+
+                     linea2.moveTo(100, 100);
+                     linea2.lineTo(50, 100);
+                     linea2.stroke();
+
+                     linea1.moveTo(50, 100);
+                     linea1.lineTo(50, 300);
+                     linea1.stroke();
+
+                     linea3.moveTo(50, 300);
+                     linea3.lineTo(300, 300);
+                     linea3.stroke();
+
+                     linea4.moveTo(700, 300);
+                     linea4.lineTo(900, 300);
+                     linea4.stroke();
+
+                     resorte1.moveTo(900, 250);
+                     resorte1.lineTo(870, 295);
+                     resorte1.stroke();
+
+                     resorte2.moveTo(870, 295);
+                     resorte2.lineTo(840, 250);
+                     resorte2.stroke();
+
+                     resorte3.moveTo(840, 250);
+                     resorte3.lineTo(810, 295);
+                     resorte3.stroke();
+
+                     resorte4.moveTo(810, 295);
+                     resorte4.lineTo(780, 250);
+                     resorte4.stroke();
+
+                     resorteCab.moveTo(780, 250);
+                     resorteCab.lineTo(780, 295);
+                     resorteCab.stroke();
 
 
-            y+= 10;
-            x+= 10;
+                     x+= aux;
+                     aux -= 0.108;
 
-            if( x == 300)
-                clearInterval(id);
+                         if (x >= 750) {
+                             clearInterval(id2);
+                         }
 
-        }
 
-        var id = setInterval(move, 50);
-    }
-    animar();*/
+                 }
+                 var id2 = setInterval(moveFreno, 50);
+             }
+         }
+         var id = setInterval(moveCurva, 50);
+     }
+     animar();
  }
-
- 
-
 
