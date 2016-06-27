@@ -16,9 +16,14 @@
  
 function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
     if (isNaN(valorIngreso)) {
-        alert("Valor ingresado no numerico, ingresar de nuevo.")
+        alert("Valor ingresado no numerico, ingresar de nuevo.");
     }
 }
+ 
+ function comprobarCoef(valorIngreso){
+     if(valorIngreso >= 1 )
+         alert("Valor de coeficiente debe variar entre 0 y 1, ingresar de nuevo");
+ }
  function convertirUnidades (valor, unidad){ //CONVIERTE LAS UNIDADES DE VALORES AL CONVENCIONAL
      if(unidad == "miligramo" || unidad == "milimetro"){
          valor = valor/1000;
@@ -95,13 +100,24 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
             if( ((vB*vB)-(2*coefRozamiento*distanciaFreno*g)) >0 )
                  vC = Math.sqrt((vB*vB)-(2*coefRozamiento*distanciaFreno*g)); //VELOCIDAD EN C
             else  vC = 0;
-         distanciaR = Math.sqrt((2*masa*g*(altura-(coefRozamiento*distanciaFreno)))/coefElasticidad); //DISTANCIA ACORTADA DEL RESORTE
-         energiaAB= masa*g*altura;  //ENERGIA EN A Y EN B
+        if(coefElasticidad > 0)
+            distanciaR = Math.sqrt((2*masa*g*(altura-(coefRozamiento*distanciaFreno)))/coefElasticidad); //DISTANCIA ACORTADA DEL RESORTE
+        else distanciaR =0;
+      energiaAB= masa*g*altura;  //ENERGIA EN A Y EN B
          energiaCR = energiaAB - (coefRozamiento*masa*g*distanciaFreno); //ENERGIA EN C Y EN EL RESORTE
          tiempoB = vB/ g;
+        if(coefRozamiento > 0)
          tiempoC = tiempoB +(vC-vB)/(coefRozamiento*g*(-1));
+      else tiempoC = 0;
 
-       
+      vB = Math.ceil(vB * 10000)/10000;
+      vC = Math.ceil(vC * 10000)/10000;
+      distanciaR = Math.ceil(distanciaR * 10000)/10000;
+      energiaAB = Math.ceil(energiaAB * 10000)/10000;
+      energiaCR = Math.ceil(energiaCR * 10000)/10000;
+      tiempoB = Math.ceil(tiempoB * 10000)/10000;
+      tiempoC = Math.ceil(tiempoC * 10000)/10000;
+
       if(myArr[1] == 1) {
           document.getElementById("VelocidadB").value = vB;
           document.getElementById("VelocidadC").value = vC;
@@ -112,7 +128,7 @@ function comprobarNum(valorIngreso) {     //COMPRUEBA SI EL VALOR ES NUMERICO
           document.getElementById("EnergiaAB").value = energiaAB;
           document.getElementById("EnergiaCR").value = energiaCR;
       }else if(myArr[1] == 4){
-          document.getElementById("xResorte").value = x;
+          document.getElementById("xResorte").value = distanciaR;
       }
 
   }

@@ -46,14 +46,14 @@
                 </select>
             </label><br><br>
 
-            Coeficiente de Rozamiento entre B-C<br> <input type="text" name="CoeficienteRozamiento" onchange="comprobarNum(this.value); "> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
+            Coeficiente de Rozamiento entre B-C<br> <input type="text" name="CoeficienteRozamiento" onchange="comprobarNum(this.value);comprobarCoef(this.value); "> <!-- AGREGO THIS.NAME Y ELIMINO LA FUNCION DE DEFINICION DE VARIABLE-->
             <label>
                 <select name="unidadesRozamiento">
                     <option value="mu">mu</option>
                 </select>
             </label><br><br>
 
-            Coeficiente de Elasticidad del resorte <br> <input type="text" name="CoeficienteElasticidad" onchange="comprobarNum(this.value);">
+            Coeficiente de Elasticidad del resorte <br> <input type="text" name="CoeficienteElasticidad" onchange="comprobarNum(this.value); comprobarCoef(this.value);">
             <label>
                 <select name="unidadesElasticidad">
                     <option value="k">k</option>
